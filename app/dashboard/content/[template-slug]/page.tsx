@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowBigLeft } from "lucide-react";
 import Link from "next/link";
@@ -17,6 +18,8 @@ const CreateNewContent = (props: PROPS) => {
   const selectedTemplate: TEMPLATE | undefined = Templates?.find(
     (item) => item.slug === props.params["template-slug"]
   );
+
+  const GenerateAIContent = async (formData: any) => {};
   return (
     <div className="p-5">
       <Link href={"/dashboard"}>
@@ -28,7 +31,7 @@ const CreateNewContent = (props: PROPS) => {
         {/* FormSection */}
         <FormSection
           selectedTemplate={selectedTemplate}
-          userFormInput={undefined}
+          userFormInput={(v: any) => GenerateAIContent(v)}
           loading={false}
         />
         <div className="col-span-2">

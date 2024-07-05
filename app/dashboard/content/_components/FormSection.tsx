@@ -13,7 +13,7 @@ interface PROPS {
   loading: boolean;
 }
 
-const FormSection = ({ selectedTemplate }: PROPS) => {
+const FormSection = ({ selectedTemplate, userFormInput }: PROPS) => {
   const [formData, setFormData] = useState<any>("");
 
   const handleInputChange = (e: any) => {
@@ -23,7 +23,7 @@ const FormSection = ({ selectedTemplate }: PROPS) => {
 
   const formSubmit = (e: any) => {
     e.preventDefault();
-    console.log(formData);
+    userFormInput(formData);
   };
   return (
     <div className="p-5 shadow-md border rounded-lg bg-white">
